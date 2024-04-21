@@ -33,9 +33,9 @@ class ModelTests(TestCase):
     def test_new_user_email_normalized(self):
         """Test email is normalized for new users."""
         sample_emails = [
-            ['test1@EXAMPLE.COM', 'test1@example.com'],
+            ['test1@EXAMPLE.com', 'test1@example.com'],
             ['Test2@Example.com', 'Test2@example.com'],
-            ['TEST3@EXAMPLE.COM', 'TEST3@example.com'],
+            ['TEST3@EXAMPLE.com', 'TEST3@example.com'],
             ['test4@example.COM', 'test4@example.com'],
         ]
         for email, expected in sample_emails:
@@ -57,7 +57,7 @@ class ModelTests(TestCase):
         self.assertTrue(user.is_staff)
 
     def test_create_recipe(self):
-        """Test creating a recipe is succesful."""
+        """Test creating a recipe is successful."""
         user = get_user_model().objects.create_user(
             'test@example.com',
             'testpass123',
@@ -73,14 +73,14 @@ class ModelTests(TestCase):
         self.assertEqual(str(recipe), recipe.title)
 
     def test_create_tag(self):
-        """Test creating a tag is succesful."""
+        """Test creating a tag is successful."""
         user = create_user()
         tag = models.Tag.objects.create(user=user, name='Tag1')
 
         self.assertEqual(str(tag), tag.name)
 
     def test_create_ingredient(self):
-        """Test creating an ingredient is succesful."""
+        """Test creating an ingredient is successful."""
         user = create_user()
         ingredient = models.Ingredient.objects.create(
             user=user,
