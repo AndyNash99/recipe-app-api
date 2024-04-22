@@ -336,7 +336,7 @@ class PrivateRecipeApiTests(TestCase):
         self.assertTrue(exists)
 
     def test_create_ingredient_on_update(self):
-        """Test creating an ingredient when updatin a recipe."""
+        """Test creating an ingredient when updating a recipe."""
         recipe = create_recipe(user=self.user)
 
         payload = {'ingredients': [{'name': 'Limes'}]}
@@ -397,7 +397,7 @@ class PrivateRecipeApiTests(TestCase):
     def test_filter_by_ingredients(self):
         """Test filtering recipes by ingredients."""
         r1 = create_recipe(user=self.user, title='Posh Beans on Toast')
-        r2 = create_recipe(user=self.user, title='Cicken Cacciatore')
+        r2 = create_recipe(user=self.user, title='Chicken Cacciatore')
         in1 = Ingredient.objects.create(user=self.user, name='Feta Cheese')
         in2 = Ingredient.objects.create(user=self.user, name='Chicken')
         r1.ingredients.add(in1)

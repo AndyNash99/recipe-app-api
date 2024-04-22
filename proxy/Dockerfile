@@ -1,4 +1,5 @@
 FROM nginxinc/nginx-unprivileged:1-alpine
+LABEL maintainer="https://github.com/AndyNash99"
 
 COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./uwsgi_params /etc/nginx/uwsgi_params
